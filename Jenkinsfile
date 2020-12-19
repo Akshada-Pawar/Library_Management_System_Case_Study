@@ -16,6 +16,7 @@ pipeline {
             agent {
                 docker {
                     image 'qnib/pytest' 
+                    //args '-i --entrypoint='
                 }
             }
             steps {
@@ -26,6 +27,7 @@ pipeline {
             agent {
                 docker {
                     image 'cdrx/pyinstaller-linux:python2'
+                    args '-i --entrypoint='
                 }
             }
             steps {
