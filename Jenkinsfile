@@ -31,11 +31,6 @@ pipeline {
             steps {
                 sh 'pyinstaller --onefile sources/library.py'
             }
-            post {
-                success {
-                    archiveArtifacts 'dist/library'
-                }
-            }
         }
         stage('Email'){
             steps{
