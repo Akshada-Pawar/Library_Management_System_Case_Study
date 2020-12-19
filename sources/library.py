@@ -92,12 +92,12 @@ class Library:
 
     def lend_book(self, requested_book):  # Request for a book
         if requested_book in self.books:
-            print(f'''\nYou have now borrowed \"{requested_book}\"''')
+            print("\nYou have now borrowed {requested_book}")
             self.books.remove(requested_book)
             return True
 
         else:
-            print(f'''\n Sorry, \"{requested_book}\" is not there in our library at the moment''')
+            print("\n Sorry, {requested_book} is not there in our library at the moment")
             return False
 
 
@@ -121,7 +121,7 @@ class Student:
 
     def return_book(self, name, book, library):
         if book not in self.books[name]:
-            raise NoBook(f'''\n\"{name}\" doesn't seem to have borrowed "{book}"''')
+            raise NoBook("\n{name} doesn't seem to have borrowed {book}")
             return False
         else:
             library.add_book(book)
@@ -183,7 +183,7 @@ if __name__ == '__main__':
             students = tuple(book_tracking.students_with_books())
             if students:
                 for name, book in students:
-                    print(f"{name}: {book}")
+                    print("{name}: {book}")
             else:
                 print("\nNo students have borrowed books at the moment")
 
